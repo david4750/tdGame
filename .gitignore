@@ -1,0 +1,6 @@
+cocos2d/
+proj.wp8-xaml/
+proj.win32/
+proj.ios_mac/
+proj.android/
+proj.linux/main.cpp
