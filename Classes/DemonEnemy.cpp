@@ -15,3 +15,21 @@ Animation* DemonEnemy::enemyAnimation(Direction direction)
 	}
 }
 
+void DemonEnemy::setAnimation(Animation *ani ,Direction direction)
+{
+	switch(direction)
+	{
+	case FRONT:
+		this->frontAnimation = ani;
+		break;
+	case BACK:
+		this->backAnimation = ani;
+		break;
+	case LEFT:
+		this->leftSideAnimation = ani;
+		break;
+	case RIGHT:
+		this->rightSideAnimation = ani;
+		break;
+	}
+}
