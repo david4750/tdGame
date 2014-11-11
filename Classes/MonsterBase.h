@@ -1,11 +1,15 @@
 #include "cocos2d.h"
-#include "Direction.h"
+#include "DirectionEnum.h"
 USING_NS_CC;
-class MonsterBase : Sprite
+class MonsterBase : public Sprite
 {
 public:
-	Animation* getMonsterAnimation(Direction direction);
-	void setMonsterAnimation(Animation *ani, Direction direction);
+	Animation* getMonsterAnimation(DirectionEnum direction);
+	void setMonsterAnimation(Animation *ani, DirectionEnum direction);
+	void runFront();
+	void runBack();
+	void runLeft();
+	void runRight();
 protected:
 	Animation* rightSideAnimation;
 	Animation* leftSideAnimation;

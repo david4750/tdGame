@@ -7,6 +7,7 @@ class PlayLayer : public cocos2d::Layer
 public:
 	static Scene *createScene();
 	virtual bool init();
+	void setEnemyMonster();
 	CREATE_FUNC(PlayLayer);
 private:
 	TMXTiledMap *map;

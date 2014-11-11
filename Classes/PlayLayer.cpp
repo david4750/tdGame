@@ -1,6 +1,8 @@
 #include "cocos2d.h"
 #include "PlayLayer.h"
 #include <iostream>
+#include "DemonMonster.h";
+#include "DirectionEnum.h";
 USING_NS_CC;
 using namespace std;
 Scene* PlayLayer::createScene()
@@ -16,6 +18,7 @@ bool PlayLayer::init()
 	if(!Layer::init())
 		return false;
 	setMap();
+	setEnemyMonster();
 	return true;
 }
 
@@ -40,4 +43,14 @@ void PlayLayer::initPointsVector()
 		runofPoint->setPosition(x,y);
 		this->vectorPoint.pushBack(runofPoint);
 	}	
+}
+
+void PlayLayer::setEnemyMonster()
+{
+	DemonMonster *demon = DemonMonster::create();
+	demon->runLeft();
+	this->addChild(demon);
+	Node *node = vectorPoint.at(2);
+	auto pos = node->getPosition();
+	demon->setPosition(pos.x,pos.y);
 }

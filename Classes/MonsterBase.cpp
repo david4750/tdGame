@@ -1,37 +1,44 @@
 #include "MonsterBase.h"
 #include "cocos2d.h"
-#include "Direction.h"
+#include "DirectionEnum.h"
 USING_NS_CC;
-Animation* MonsterBase::getMonsterAnimation(Direction direction)
+
+Animation* MonsterBase::getMonsterAnimation(DirectionEnum direction)
 {
 	switch(direction)
 	{
-	case FRONT:
+	case 0:
 		return this->frontAnimation;
-	case BACK:
+	case 1:
 		return this->backAnimation;
-	case LEFT:
+	case 2:
 		return this->leftSideAnimation;
-	case RIGHT:
+	case 3:
 		return this->rightSideAnimation;
 	}
 }
 
-void MonsterBase::setMonsterAnimation(Animation *ani ,Direction direction)
+void MonsterBase::setMonsterAnimation(Animation *ani ,DirectionEnum direction)
 {
 	switch(direction)
 	{
-	case FRONT:
+	case 0:
 		this->frontAnimation = ani;
 		break;
-	case BACK:
+	case 1:
 		this->backAnimation = ani;
 		break;
-	case LEFT:
+	case 2:
 		this->leftSideAnimation = ani;
 		break;
-	case RIGHT:
+	case 3:
 		this->rightSideAnimation = ani;
 		break;
 	}
+}
+
+void MonsterBase::runLeft()
+{
+	Animate *animate = Animate::create(this->leftSideAnimation);
+	this->runAction(RepeatForever::create(animate));
 }

@@ -1,10 +1,15 @@
 #include "MonsterBase.h"
-#include "Direction.h"
+#include "DirectionEnum.h"
+#include "string.h"
 
+using namespace std;
 USING_NS_CC;
-class DemonMonster : MonsterBase
+
+class DemonMonster : public MonsterBase
 {
 public:
-	Animation* enemyAnimation(Direction direction);
-	void setAnimation(Animation *ani, Direction direction);
+	void initAnimation();
+	Animation* createAnimation(string plistFileName, int framesNum, float delay);
+	static DemonMonster *create();
 };
+
