@@ -1,6 +1,8 @@
-#include "DemonEnemy.h"
+#include "MonsterBase.h"
+#include "cocos2d.h"
+#include "Direction.h"
 USING_NS_CC;
-Animation* DemonEnemy::enemyAnimation(Direction direction)
+Animation* MonsterBase::getMonsterAnimation(Direction direction)
 {
 	switch(direction)
 	{
@@ -15,7 +17,7 @@ Animation* DemonEnemy::enemyAnimation(Direction direction)
 	}
 }
 
-void DemonEnemy::setAnimation(Animation *ani ,Direction direction)
+void MonsterBase::setMonsterAnimation(Animation *ani ,Direction direction)
 {
 	switch(direction)
 	{

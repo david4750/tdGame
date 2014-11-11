@@ -1,8 +1,8 @@
-#include "EnemyBase.h"
+#include "MonsterBase.h"
 #include "Direction.h"
 
 USING_NS_CC;
-class DemonEnemy : EnemyBase
+class DemonMonster : MonsterBase
 {
 public:
 	Animation* enemyAnimation(Direction direction);
